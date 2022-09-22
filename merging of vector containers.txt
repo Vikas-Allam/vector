@@ -1,0 +1,28 @@
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<iterator>
+using namespace std;
+
+int main()
+{
+    vector<int> arr1 = { 1, 4, 6, 3, 2 };
+    vector<int>arr2={5,7,9,12};
+
+  vector<int> arr3(10);
+   vector<int>::iterator i;
+
+
+    sort(arr1.begin(), arr1.end());
+   sort(arr2.begin(), arr2.end());
+
+    merge(arr1.begin(), arr1.end(), arr2.begin(),arr2.end(),arr3.begin());
+
+
+    cout << "The container after merging is: ";
+
+    for (i = arr3.begin(); i< arr3.end(); i++)
+        cout <<*i << " ";
+    return 0;
+}
